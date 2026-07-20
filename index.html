@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HG Detailing | Estética Automotriz</title>
-    <!-- Cargamos los iconos oficiales de Font Awesome para que el logo de WhatsApp nunca falle -->
+    <!-- Iconos oficiales de Font Awesome cargados correctamente -->
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         /* --- VARIABLES DE DISEÑO --- */
@@ -203,6 +203,7 @@
             margin: 0 0 25px 0;
         }
 
+        /* Modificado a enlaces reales para que el diseño visual y el clic respondan perfectamente */
         .btn-cotizar {
             display: block;
             text-align: center;
@@ -213,6 +214,7 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
+            cursor: pointer;
             transition: background-color 0.3s, border-color 0.3s;
         }
 
@@ -222,7 +224,7 @@
             border-color: var(--color-primario);
         }
 
-        /* --- BOTÓN WHATSAPP --- */
+        /* --- BOTÓN WHATSAPP EN ALTA DEFINICIÓN --- */
         .btn-whatsapp {
             position: fixed;
             bottom: 25px;
@@ -242,7 +244,7 @@
         }
 
         .btn-whatsapp i {
-            font-size: 1.3rem;
+            font-size: 1.4rem; /* Logotipo de WhatsApp restaurado */
         }
 
         .btn-whatsapp:hover {
@@ -283,19 +285,22 @@
                     <h3>HG Fast (Carros Pequeños)</h3>
                     <p class="precio">$50.000</p>
                     <p class="descripcion">Lavado rápido y eficiente para autos compactos. Limpieza exterior profunda y aspirado básico.</p>
-                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
+                    <a class="btn-cotizar" href="#" onclick="enviarMensaje(event, 'HG Fast Carros Pequeños')">Cotizar Servicio</a>
                 </div>
 
                 <div class="tarjeta-servicio">
                     <h3>HG Fast (Carros Grandes)</h3>
                     <p class="precio">$70.000</p>
                     <p class="descripcion">Lavado rápido optimizado para camionetas y SUVs. Limpieza exterior premium y aspirado básico.</p>
-                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
+                    <a class="btn-cotizar" href="#" onclick="enviarMensaje(event, 'HG Fast Carros Grandes')">Cotizar Servicio</a>
                 </div>
 
                 <div class="tarjeta-servicio">
                     <h3>HG Biker</h3>
                     <p class="precio">$25.000</p>
                     <p class="descripcion">Cuidado especializado para motocicletas. Lavado detallado y abrillantado general.</p>
-                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
+                    <a class="btn-cotizar" href="#" onclick="enviarMensaje(event, 'HG Biker')">Cotizar Servicio</a>
                 </div>
+
+                <div class="tarjeta-servicio">
+                    <h3>Elite</h3>
