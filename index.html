@@ -22,7 +22,7 @@
             background-color: #000000;
         }
 
-        /* --- VIDEO FIJO AL FONDO (ENLACE EXTERNO ULTRA RÁPIDO) --- */
+        /* --- VIDEO FIJO AL FONDO (APUNTANDO A CARW1.MP4) --- */
         .hero-video-container {
             position: fixed;
             top: 0;
@@ -250,14 +250,15 @@
 </head>
 <body>
 
+    <!-- Contenedor del video fijo apuntando a tu archivo local de forma ligera -->
     <div class="hero-video-container">
-        <!-- El video ahora carga al instante desde un servidor premium externo -->
-        <video autoplay loop muted playsinline class="video-fondo">
-            <source src="https://mixkit.co" type="video/mp4">
+        <video autoplay loop muted playsinline preload="metadata" loading="lazy" class="video-fondo">
+            <source src="carw1.mp4" type="video/mp4">
         </video>
         <div class="capa-oscura"></div>
     </div>
 
+    <!-- Portada Inicial -->
     <header class="contenido-hero">
         <h1 class="titulo-cool">HG DETAILING</h1>
         <p>Cuidado premium y estética automotriz de nivel superior</p>
@@ -269,6 +270,7 @@
         </div>
     </header>
 
+    <!-- Sección de Precios -->
     <main>
         <section id="servicios">
             <h2>Nuestros Servicios y Precios</h2>
