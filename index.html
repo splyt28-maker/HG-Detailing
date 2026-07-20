@@ -211,6 +211,7 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
+            cursor: pointer;
             transition: background-color 0.3s, border-color 0.3s;
         }
 
@@ -227,13 +228,23 @@
             right: 25px;
             background-color: #25d366;
             color: #ffffff;
-            padding: 15px 25px;
+            padding: 12px 25px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
             transition: transform 0.3s ease;
+        }
+
+        .btn-whatsapp svg {
+            width: 22px;
+            height: 22px;
+            fill: #ffffff;
         }
 
         .btn-whatsapp:hover {
@@ -274,24 +285,29 @@
                     <h3>HG Fast (Carros Pequeños)</h3>
                     <p class="precio">$50.000</p>
                     <p class="descripcion">Lavado rápido y eficiente para autos compactos. Limpieza exterior profunda y aspirado básico.</p>
-                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
+                    <a class="btn-cotizar" href="#" onclick="conectarWhatsApp(event, 'HG Fast Carros Pequeños')">Cotizar Servicio</a>
                 </div>
 
                 <div class="tarjeta-servicio">
                     <h3>HG Fast (Carros Grandes)</h3>
                     <p class="precio">$70.000</p>
                     <p class="descripcion">Lavado rápido optimizado para camionetas y SUVs. Limpieza exterior premium y aspirado básico.</p>
-                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
+                    <a class="btn-cotizar" href="#" onclick="conectarWhatsApp(event, 'HG Fast Carros Grandes')">Cotizar Servicio</a>
                 </div>
 
                 <div class="tarjeta-servicio">
                     <h3>HG Biker</h3>
                     <p class="precio">$25.000</p>
                     <p class="descripcion">Cuidado especializado para motocicletas. Lavado detallado y abrillantado general.</p>
-                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
+                    <a class="btn-cotizar" href="#" onclick="conectarWhatsApp(event, 'HG Biker')">Cotizar Servicio</a>
                 </div>
 
                 <div class="tarjeta-servicio">
                     <h3>Elite</h3>
                     <p class="precio">Precio Variable</p>
                     <p class="descripcion">Servicio premium personalizado de detallado profundo. El costo final se define bajo diagnóstico según el estado del vehículo.</p>
+Usa el código con precaución.Cotizar ServicioAgenda por WhatsAppfunction conectarWhatsApp(e, servicio) {e.preventDefault();const numeroColombia = "573209983234";const mensajeBase = "Hola HG Detailing, me interesa cotizar el servicio de: " + servicio;const textoEncriptado = encodeURIComponent(mensajeBase);const esMóvil = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);let urlFinal = "";if (esMóvil) {// Comando directo para la App del celularurlFinal = "whatsapp.com" + numeroColombia + "&text=" + textoEncriptado;} else {// Redirección para WhatsApp Web en computadorasurlFinal = "whatsapp.com" + numeroColombia + "&text=" + textoEncriptado;}window.open(urlFinal, '_blank');}
+### 🏁 Pasos para forzar el cambio en tu pantalla:
+1. Dale al botón verde **Commit changes...** abajo en GitHub para guardar el archivo completo.
+2. Espera **1 minuto** a que la pestaña de *Actions* termine el proceso.
+3. Para eliminar de una vez el historial viejo de tu navegador en la computadora, presiona **`Ctrl + F5`** estando en tu sitio. ¡El logo verde aparecerá al instante e irá directo al chat! ¿Me avisas si ya te cargó el icono abajo?
