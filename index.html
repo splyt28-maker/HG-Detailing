@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HG Detailing | Estética Automotriz</title>
+    <!-- Cargamos los iconos oficiales de Font Awesome para que el logo de WhatsApp nunca falle -->
+    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         /* --- VARIABLES DE DISEÑO --- */
         :root {
@@ -233,7 +235,14 @@
             font-weight: bold;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 10px;
             transition: transform 0.3s ease;
+        }
+
+        .btn-whatsapp i {
+            font-size: 1.3rem;
         }
 
         .btn-whatsapp:hover {
@@ -290,8 +299,3 @@
                     <p class="descripcion">Cuidado especializado para motocicletas. Lavado detallado y abrillantado general.</p>
                     <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
                 </div>
-
-                <div class="tarjeta-servicio">
-                    <h3>Elite</h3>
-                    <p class="precio">Precio Variable</p>
-                    <p class="descripcion">Servicio premium personalizado de detallado profundo. El costo final se define bajo diagnóstico según el estado del vehículo.</p>
