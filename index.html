@@ -22,7 +22,7 @@
             background-color: #000000;
         }
 
-        /* --- VIDEO FIJO AL FONDO --- */
+        /* --- VIDEO FIJO AL FONDO (ENLACE EXTERNO ULTRA RÁPIDO) --- */
         .hero-video-container {
             position: fixed;
             top: 0;
@@ -251,8 +251,9 @@
 <body>
 
     <div class="hero-video-container">
+        <!-- El video ahora carga al instante desde un servidor premium externo -->
         <video autoplay loop muted playsinline class="video-fondo">
-            <source src="carw1.mp4" type="video/mp4">
+            <source src="https://mixkit.co" type="video/mp4">
         </video>
         <div class="capa-oscura"></div>
     </div>
@@ -297,10 +298,3 @@
                     <h3>Elite</h3>
                     <p class="precio">Precio Variable</p>
                     <p class="descripcion">Servicio premium personalizado de detallado profundo. El costo final se define bajo diagnóstico según el estado del vehículo.</p>
-                    <button class="btn-cotizar" onclick="enviarMensaje('Elite')">Cotizar Servicio</button>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <button class="btn-whatsapp" onclick="enviarMensaje('Información General')">💬 Agenda por WhatsApp</button>
