@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HG Detailing | Estética Automotriz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Contenedor del video fijo al fondo de toda la página -->
+    <div class="hero-video-container">
+        <video autoplay loop muted playsinline class="video-fondo">
+            <source src="carw1.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+        <div class="capa-oscura"></div>
+    </div>
+
+    <!-- Portada Inicial -->
+    <header class="contenido-hero">
+        <h1 class="titulo-cool">HG DETAILING</h1>
+        <p>Cuidado premium y estética automotriz de nivel superior</p>
+        <a href="#servicios" class="btn-scroll">Ver Servicios</a>
+        
+        <!-- Tu nuevo eslogan agregado aquí debajo -->
+        <p class="eslogan-cool">"Tener el auto sucio no es un descuido, sino una decisión"</p>
+    </header>
+
+    <!-- Sección de Precios -->
+    <main>
+        <section id="servicios">
+            <h2>Nuestros Servicios y Precios</h2>
+            <div id="contenedor-precios" class="grid-precios">
+                <!-- Las tarjetas de servicios se generan dinámicamente desde el JSON -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Botón Flotante de WhatsApp General -->
+    <footer>
+        <a href="https://wa.me" class="btn-whatsapp" target="_blank">💬 Agenda por WhatsApp</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
