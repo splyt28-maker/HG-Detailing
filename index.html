@@ -22,7 +22,7 @@
             background-color: #000000;
         }
 
-        /* --- VIDEO FIJO AL FONDO (APUNTANDO A CARW1.MP4) --- */
+        /* --- VIDEO FIJO AL FONDO --- */
         .hero-video-container {
             position: fixed;
             top: 0;
@@ -211,7 +211,6 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            cursor: pointer;
             transition: background-color 0.3s, border-color 0.3s;
         }
 
@@ -234,7 +233,6 @@
             font-weight: bold;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             z-index: 10;
-            cursor: pointer;
             transition: transform 0.3s ease;
         }
 
@@ -250,7 +248,6 @@
 </head>
 <body>
 
-    <!-- Contenedor del video fijo apuntando a tu archivo local de forma ligera -->
     <div class="hero-video-container">
         <video autoplay loop muted playsinline preload="metadata" loading="lazy" class="video-fondo">
             <source src="carw1.mp4" type="video/mp4">
@@ -258,7 +255,6 @@
         <div class="capa-oscura"></div>
     </div>
 
-    <!-- Portada Inicial -->
     <header class="contenido-hero">
         <h1 class="titulo-cool">HG DETAILING</h1>
         <p>Cuidado premium y estética automotriz de nivel superior</p>
@@ -270,7 +266,6 @@
         </div>
     </header>
 
-    <!-- Sección de Precios -->
     <main>
         <section id="servicios">
             <h2>Nuestros Servicios y Precios</h2>
@@ -279,21 +274,21 @@
                     <h3>HG Fast (Carros Pequeños)</h3>
                     <p class="precio">$50.000</p>
                     <p class="descripcion">Lavado rápido y eficiente para autos compactos. Limpieza exterior profunda y aspirado básico.</p>
-                    <button class="btn-cotizar" onclick="enviarMensaje('HG Fast Carros Pequeños')">Cotizar Servicio</button>
+                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
                 </div>
 
                 <div class="tarjeta-servicio">
                     <h3>HG Fast (Carros Grandes)</h3>
                     <p class="precio">$70.000</p>
                     <p class="descripcion">Lavado rápido optimizado para camionetas y SUVs. Limpieza exterior premium y aspirado básico.</p>
-                    <button class="btn-cotizar" onclick="enviarMensaje('HG Fast Carros Grandes')">Cotizar Servicio</button>
+                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
                 </div>
 
                 <div class="tarjeta-servicio">
                     <h3>HG Biker</h3>
                     <p class="precio">$25.000</p>
                     <p class="descripcion">Cuidado especializado para motocicletas. Lavado detallado y abrillantado general.</p>
-                    <button class="btn-cotizar" onclick="enviarMensaje('HG Biker')">Cotizar Servicio</button>
+                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
                 </div>
 
                 <div class="tarjeta-servicio">
