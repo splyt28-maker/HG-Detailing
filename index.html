@@ -31,6 +31,7 @@
             height: 100vh;
             overflow: hidden;
             z-index: -2;
+            background-color: #000000;
         }
 
         .video-fondo {
@@ -51,7 +52,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.9) 100%);
+            background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.9) 100%);
             z-index: -1;
         }
 
@@ -76,7 +77,6 @@
             letter-spacing: 6px;
             text-transform: uppercase;
             text-shadow: 3px 3px 0px #000000, 0 0 10px var(--color-primario), 0 0 30px var(--color-primario);
-            animation: aparecerNeon 1.5s ease-out forwards;
         }
 
         .contenido-hero p {
@@ -86,7 +86,6 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.9);
-            animation: aparecerSutil 2s ease-out forwards;
         }
 
         .eslogan-cool {
@@ -96,7 +95,7 @@
             margin-top: 25px !important;
             letter-spacing: 1px !important;
             text-transform: none !important;
-            animation: aparecerSutil 2.5s ease-out forwards !important;
+            text-shadow: 1px 1px 4px #000000;
         }
 
         .btn-scroll {
@@ -219,16 +218,6 @@
             transform: scale(1.05);
         }
 
-        /* --- ANIMACIONES --- */
-        @keyframes aparecerNeon {
-            0% { opacity: 0; transform: scale(0.95); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-        @keyframes aparecerSutil {
-            0% { opacity: 0; transform: translateY(10px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
         @media (max-width: 768px) {
             .titulo-cool { font-size: 3.2rem; letter-spacing: 3px; }
             .contenido-hero p { font-size: 1.1rem; }
@@ -241,7 +230,6 @@
     <div class="hero-video-container">
         <video autoplay loop muted playsinline class="video-fondo">
             <source src="carw1.mp4" type="video/mp4">
-            Tu navegador no soporta videos.
         </video>
         <div class="capa-oscura"></div>
     </div>
@@ -259,7 +247,6 @@
         <section id="servicios">
             <h2>Nuestros Servicios y Precios</h2>
             <div id="contenedor-precios" class="grid-precios">
-                <!-- Tarjetas integradas estáticamente para máxima estabilidad en internet -->
                 <div class="tarjeta-servicio">
                     <h3>HG Fast (Carros Pequeños)</h3>
                     <p class="precio">$50.000</p>
@@ -285,3 +272,16 @@
                     <h3>Elite</h3>
                     <p class="precio">Precio Variable</p>
                     <p class="descripcion">Servicio premium personalizado de detallado profundo. El costo final se define bajo diagnóstico según el estado del vehículo.</p>
+                    <a href="https://wa.me" class="btn-cotizar" target="_blank">Cotizar Servicio</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Botón Flotante de WhatsApp General -->
+    <footer>
+        <a href="https://wa.me" class="btn-whatsapp" target="_blank">💬 Agenda por WhatsApp</a>
+    </footer>
+
+</body>
+</html>
