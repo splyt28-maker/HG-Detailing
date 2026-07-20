@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "nombre": "HG Fast (Carros Pequeños)",
+        "precio": "$50.000",
+        "descripcion": "Lavado rápido y eficiente para autos compactos. Limpieza exterior profunda y aspirado básico."
+    },
+    {
+        "id": 2,
+        "nombre": "HG Fast (Carros Grandes)",
+        "precio": "$70.000",
+        "descripcion": "Lavado rápido optimizado para camionetas y SUVs. Limpieza exterior premium y aspirado básico."
+    },
+    {
+        "id": 3,
+        "nombre": "HG Biker",
+        "precio": "$25.000",
+        "descripcion": "Cuidado especializado para motocicletas. Lavado detallado, desengrasado de cadena y abrillantado."
+    },
+    {
+        "id": 4,
+        "nombre": "Elite",
+        "precio": "Precio Variable",
+        "descripcion": "Servicio premium personalizado de detallado profundo. El costo final se define bajo diagnóstico según el estado del vehículo."
+    }
+]

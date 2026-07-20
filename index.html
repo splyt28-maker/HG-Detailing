@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HG Detailing | Estética Automotriz</title>
+    <style>
+        /* --- VARIABLES DE DISEÑO --- */
+        :root {
+            --color-tarjeta: rgba(18, 18, 18, 0.85);
+            --color-primario: #00e5ff;
+            --color-texto: #ffffff;
+            --color-gris: #cccccc;
+        }
+
+        body {
+            color: var(--color-texto);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #000000;
+        }
+
+        /* --- VIDEO FIJO AL FONDO --- */
+        .hero-video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -2;
+            background-color: #000000;
+        }
+
+        .video-fondo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        .capa-oscura {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.9) 100%);
+            z-index: -1;
+        }
+
+        /* --- PORTADA INICIAL --- */
+        .contenido-hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .titulo-cool {
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            font-size: 5.5rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin: 0 0 10px 0;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 0px #000000, 0 0 10px var(--color-primario), 0 0 30px var(--color-primario);
+        }
+
+        .contenido-hero p {
+            font-size: 1.4rem;
+            color: #e0e0e0;
+            margin: 0 0 25px 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.9);
+        }
+
+        .btn-scroll {
+            display: inline-block;
+            padding: 14px 35px;
+            border: 2px solid var(--color-primario);
+            color: var(--color-primario);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            background-color: rgba(0, 0, 0, 0.4);
+            margin-bottom: 30px;
+        }
+
+        .btn-scroll:hover {
+            background-color: var(--color-primario);
+            color: #000000;
+            box-shadow: 0 0 20px var(--color-primario);
+        }
+
+        /* --- CAJA CONTENEDORA PARA EL ESLOGAN --- */
+        .caja-eslogan {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 229, 255, 0.25);
+            backdrop-filter: blur(5px);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .eslogan-cool {
+            font-size: 1.1rem !important;
+            font-style: italic;
+            color: #ffffff !important;
+            margin: 0 0 12px 0 !important;
+            letter-spacing: 1px !important;
+            text-transform: none !important;
+            line-height: 1.4;
+        }
+
+        .gracias-cool {
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            font-size: 1.3rem;
+            color: var(--color-primario);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0 !important;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+        }
+
+        /* --- TARJETAS --- */
+        #servicios {
+            position: relative;
+            z-index: 5; 
+            padding: 80px 20px;
+            text-align: center;
+            background: transparent;
+        }
+
+        #servicios h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            letter-spacing: 1px;
+            text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.9);
+        }
+
+        .grid-precios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tarjeta-servicio {
+            background-color: var(--color-tarjeta);
+            border: 1px solid #252525;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            backdrop-filter: blur(8px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .tarjeta-servicio:hover {
+            transform: translateY(-8px);
+            border-color: var(--color-primario);
+            box-shadow: 0 10px 25px rgba(0, 229, 255, 0.25);
+        }
+
+        .tarjeta-servicio h3 {
+            font-size: 1.6rem;
+            margin: 0 0 10px 0;
+        }
+
+        .precio {
+            font-size: 2rem;
+            color: var(--color-primario);
+            font-weight: bold;
+            margin: 0 0 15px 0;
+        }
+
+        .descripcion {
+            color: var(--color-gris);
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 0 0 25px 0;
+        }
+
+        .btn-cotizar {
+            display: block;
+            text-align: center;
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid #555555;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .tarjeta-servicio:hover .btn-cotizar {
+            background-color: var(--color-primario);
+            color: #000000;
+            border-color: var(--color-primario);
+        }
+
+        /* --- BOTÓN WHATSAPP --- */
+        .btn-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: #ffffff;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .titulo-cool { font-size: 3.2rem; letter-spacing: 3px; }
+            .contenido-hero p { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-video-container">
+        <video autoplay loop muted playsinline class="video-fondo">
+            <source src="carw1.mp4" type="video/mp4">
+        </video>
+        <div class="capa-oscura"></div>
+    </div>
+
+    <header class="contenido-hero">
+        <h1 class="titulo-cool">HG DETAILING</h1>
+        <p>Cuidado premium y estética automotriz de nivel superior</p>
+        <a href="#servicios" class="btn-scroll">Ver Servicios</a>
+        
+        <div class="caja-eslogan">
+            <p class="eslogan-cool">"Tener el vehículo sucio no es un descuido, sino una decisión"</p>
+            <h2 class="gracias-cool">¡Gracias por elegirnos!</h2>
+        </div>
+    </header>
+
+    <main>
+        <section id="servicios">
+            <h2>Nuestros Servicios y Precios</h2>
+            <div id="contenedor-precios" class="grid-precios">
+                <div class="tarjeta-servicio">
+                    <h3>HG Fast (Carros Pequeños)</h3>
+                    <p class="precio">$50.000</p>
+                    <p class="descripcion">Lavado rápido y eficiente para autos compactos. Limpieza exterior profunda y aspirado básico.</p>
+                    <button class="btn-cotizar" onclick="enviarMensaje('HG Fast Carros Pequeños')">Cotizar Servicio</button>
+                </div>
+
+                <div class="tarjeta-servicio">
+                    <h3>HG Fast (Carros Grandes)</h3>
+                    <p class="precio">$70.000</p>
+                    <p class="descripcion">Lavado rápido optimizado para camionetas y SUVs. Limpieza exterior premium y aspirado básico.</p>
+                    <button class="btn-cotizar" onclick="enviarMensaje('HG Fast Carros Grandes')">Cotizar Servicio</button>
+                </div>
+
+                <div class="tarjeta-servicio">
+                    <h3>HG Biker</h3>
+                    <p class="precio">$25.000</p>
+                    <p class="descripcion">Cuidado especializado para motocicletas. Lavado detallado y abrillantado general.</p>
+                    <button class="btn-cotizar" onclick="enviarMensaje('HG Biker')">Cotizar Servicio</button>
+                </div>
+
+                <div class="tarjeta-servicio">
+                    <h3>Elite</h3>
+                    <p class="precio">Precio Variable</p>
+                    <p class="descripcion">Servicio premium personalizado de detallado profundo. El costo final se define bajo diagnóstico según el estado del vehículo.</p>
+                    <button class="btn-cotizar" onclick="enviarMensaje('Elite')">Cotizar Servicio</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button class="btn-whatsapp" onclick="enviarMensaje('Información General')">💬 Agenda por WhatsApp</button>
