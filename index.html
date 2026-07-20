@@ -82,20 +82,10 @@
         .contenido-hero p {
             font-size: 1.4rem;
             color: #e0e0e0;
-            margin: 0 0 35px 0;
+            margin: 0 0 25px 0;
             letter-spacing: 2px;
             text-transform: uppercase;
             text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.9);
-        }
-
-        .eslogan-cool {
-            font-size: 1.1rem !important;
-            font-style: italic;
-            color: #aaaaaa !important;
-            margin-top: 25px !important;
-            letter-spacing: 1px !important;
-            text-transform: none !important;
-            text-shadow: 1px 1px 4px #000000;
         }
 
         .btn-scroll {
@@ -109,12 +99,44 @@
             border-radius: 50px;
             transition: all 0.3s ease;
             background-color: rgba(0, 0, 0, 0.4);
+            margin-bottom: 30px;
         }
 
         .btn-scroll:hover {
             background-color: var(--color-primario);
             color: #000000;
             box-shadow: 0 0 20px var(--color-primario);
+        }
+
+        /* --- CAJA CONTENEDORA PARA EL ESLOGAN --- */
+        .caja-eslogan {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 229, 255, 0.25);
+            backdrop-filter: blur(5px);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .eslogan-cool {
+            font-size: 1.1rem !important;
+            font-style: italic;
+            color: #ffffff !important;
+            margin: 0 0 12px 0 !important;
+            letter-spacing: 1px !important;
+            text-transform: none !important;
+            line-height: 1.4;
+        }
+
+        .gracias-cool {
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            font-size: 1.3rem;
+            color: var(--color-primario);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0 !important;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
         }
 
         /* --- TARJETAS --- */
@@ -189,6 +211,7 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
+            cursor: pointer;
             transition: background-color 0.3s, border-color 0.3s;
         }
 
@@ -211,6 +234,7 @@
             font-weight: bold;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             z-index: 10;
+            cursor: pointer;
             transition: transform 0.3s ease;
         }
 
@@ -237,7 +261,11 @@
         <h1 class="titulo-cool">HG DETAILING</h1>
         <p>Cuidado premium y estética automotriz de nivel superior</p>
         <a href="#servicios" class="btn-scroll">Ver Servicios</a>
-        <p class="eslogan-cool">"Tener el vehículo sucio no es un descuido, sino una decisión"</p>
+        
+        <div class="caja-eslogan">
+            <p class="eslogan-cool">"Tener el vehículo sucio no es un descuido, sino una decisión"</p>
+            <h2 class="gracias-cool">¡Gracias por elegirnos!</h2>
+        </div>
     </header>
 
     <main>
@@ -248,34 +276,31 @@
                     <h3>HG Fast (Carros Pequeños)</h3>
                     <p class="precio">$50.000</p>
                     <p class="descripcion">Lavado rápido y eficiente para autos compactos. Limpieza exterior profunda y aspirado básico.</p>
-                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
+                    <button class="btn-cotizar" onclick="enviarMensaje('HG Fast Carros Pequeños')">Cotizar Servicio</button>
                 </div>
 
                 <div class="tarjeta-servicio">
                     <h3>HG Fast (Carros Grandes)</h3>
                     <p class="precio">$70.000</p>
                     <p class="descripcion">Lavado rápido optimizado para camionetas y SUVs. Limpieza exterior premium y aspirado básico.</p>
-                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
+                    <button class="btn-cotizar" onclick="enviarMensaje('HG Fast Carros Grandes')">Cotizar Servicio</button>
                 </div>
 
                 <div class="tarjeta-servicio">
                     <h3>HG Biker</h3>
                     <p class="precio">$25.000</p>
-                    <p class="descripcion">Cuidado especializado para motocicletas. Lavado detallado, desengrasado de cadena y abrillantado.</p>
-                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
+                    <p class="descripcion">Cuidado especializado para motocicletas. Lavado detallado y abrillantado general.</p>
+                    <button class="btn-cotizar" onclick="enviarMensaje('HG Biker')">Cotizar Servicio</button>
                 </div>
 
                 <div class="tarjeta-servicio">
                     <h3>Elite</h3>
                     <p class="precio">Precio Variable</p>
                     <p class="descripcion">Servicio premium personalizado de detallado profundo. El costo final se define bajo diagnóstico según el estado del vehículo.</p>
-                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
+                    <button class="btn-cotizar" onclick="enviarMensaje('Elite')">Cotizar Servicio</button>
                 </div>
             </div>
         </section>
     </main>
 
-    <a class="btn-whatsapp" href="https://wa.me" target="_blank">💬 Agenda por WhatsApp</a>
-
-</body>
-</html>
+    <button class="btn-whatsapp" onclick="enviarMensaje('Información General')">💬 Agenda por WhatsApp</button>
