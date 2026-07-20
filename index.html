@@ -189,7 +189,6 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            cursor: pointer;
             transition: background-color 0.3s, border-color 0.3s;
         }
 
@@ -212,7 +211,6 @@
             font-weight: bold;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             z-index: 10;
-            cursor: pointer;
             transition: transform 0.3s ease;
         }
 
@@ -250,49 +248,34 @@
                     <h3>HG Fast (Carros Pequeños)</h3>
                     <p class="precio">$50.000</p>
                     <p class="descripcion">Lavado rápido y eficiente para autos compactos. Limpieza exterior profunda y aspirado básico.</p>
-                    <button class="btn-cotizar" onclick="enviarMensaje('HG Fast Carros Pequeños')">Cotizar Servicio</button>
+                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
                 </div>
 
                 <div class="tarjeta-servicio">
                     <h3>HG Fast (Carros Grandes)</h3>
                     <p class="precio">$70.000</p>
                     <p class="descripcion">Lavado rápido optimizado para camionetas y SUVs. Limpieza exterior premium y aspirado básico.</p>
-                    <button class="btn-cotizar" onclick="enviarMensaje('HG Fast Carros Grandes')">Cotizar Servicio</button>
+                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
                 </div>
 
                 <div class="tarjeta-servicio">
                     <h3>HG Biker</h3>
                     <p class="precio">$25.000</p>
                     <p class="descripcion">Cuidado especializado para motocicletas. Lavado detallado, desengrasado de cadena y abrillantado.</p>
-                    <button class="btn-cotizar" onclick="enviarMensaje('HG Biker')">Cotizar Servicio</button>
+                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
                 </div>
 
                 <div class="tarjeta-servicio">
                     <h3>Elite</h3>
                     <p class="precio">Precio Variable</p>
                     <p class="descripcion">Servicio premium personalizado de detallado profundo. El costo final se define bajo diagnóstico según el estado del vehículo.</p>
-                    <button class="btn-cotizar" onclick="enviarMensaje('Elite')">Cotizar Servicio</button>
+                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <button class="btn-whatsapp" onclick="enviarMensaje('Información General')">💬 Agenda por WhatsApp</button>
-
-    <!-- Sistema Automático de Redirección Local -->
-    <script>
-        function enviarMensaje(servicio) {
-            // El número de Colombia sin el prefijo manual visible
-            const numeroCelular = "3209983234"; 
-            const mensajeOriginal = "Hola HG Detailing, me interesa el servicio de: " + servicio;
-            const textoLimpio = encodeURIComponent(mensajeOriginal);
-            
-            // Estructura universal para saltar bloqueos en Colombia
-            const enlaceSeguro = "https://wa.me" + numeroCelular + "?text=" + textoLimpio;
-            
-            window.open(enlaceSeguro, '_blank');
-        }
-    </script>
+    <a class="btn-whatsapp" href="https://wa.me" target="_blank">💬 Agenda por WhatsApp</a>
 
 </body>
 </html>
