@@ -7,8 +7,8 @@
     <style>
         /* --- VARIABLES DE DISEÑO --- */
         :root {
-            --color-tarjeta: rgba(18, 18, 18, 0.85);
-            --color-primario: #00e5ff; /* Cyan neón oficial */
+            --color-tarjeta: rgba(18, 18, 18, 0.85); /* Fondo oscuro con transparencia premium */
+            --color-primario: #00e5ff; /* Cyan neón brillante */
             --color-texto: #ffffff;
             --color-gris: #cccccc;
         }
@@ -22,7 +22,7 @@
             background-color: #000000;
         }
 
-        /* --- VIDEO FIJO AL FONDO --- */
+        /* --- VIDEO COMPLETAMENTE FIJO AL FONDO DE TODA LA WEB --- */
         .hero-video-container {
             position: fixed;
             top: 0;
@@ -30,8 +30,7 @@
             width: 100vw;
             height: 100vh;
             overflow: hidden;
-            z-index: -2;
-            background-color: #000000;
+            z-index: -2; /* Envía el video detrás de todo el contenido */
         }
 
         .video-fondo {
@@ -52,11 +51,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.9) 100%);
+            background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.9) 100%);
             z-index: -1;
         }
 
-        /* --- PORTADA INICIAL --- */
+        /* --- TEXTO DE BIENVENIDA (PANTALLA INICIAL) --- */
         .contenido-hero {
             height: 100vh;
             display: flex;
@@ -68,6 +67,7 @@
             box-sizing: border-box;
         }
 
+        /* Estilo Imponente y Deportivo */
         .titulo-cool {
             font-family: 'Impact', 'Arial Black', sans-serif;
             font-size: 5.5rem;
@@ -76,16 +76,31 @@
             margin: 0 0 10px 0;
             letter-spacing: 6px;
             text-transform: uppercase;
-            text-shadow: 3px 3px 0px #000000, 0 0 10px var(--color-primario), 0 0 30px var(--color-primario);
+            text-shadow: 
+                3px 3px 0px #000000,
+                0 0 10px var(--color-primario),
+                0 0 30px var(--color-primario);
+            animation: aparecerNeon 1.5s ease-out forwards;
         }
 
         .contenido-hero p {
             font-size: 1.4rem;
             color: #e0e0e0;
-            margin: 0 0 25px 0;
+            margin: 0 0 35px 0;
             letter-spacing: 2px;
             text-transform: uppercase;
             text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.9);
+            animation: aparecerSutil 2s ease-out forwards;
+        }
+
+        .eslogan-cool {
+            font-size: 1.1rem !important;
+            font-style: italic;
+            color: #aaaaaa !important;
+            margin-top: 25px !important;
+            letter-spacing: 1px !important;
+            text-transform: none !important;
+            animation: aparecerSutil 2.5s ease-out forwards !important;
         }
 
         .btn-scroll {
@@ -99,7 +114,6 @@
             border-radius: 50px;
             transition: all 0.3s ease;
             background-color: rgba(0, 0, 0, 0.4);
-            margin-bottom: 30px;
         }
 
         .btn-scroll:hover {
@@ -108,38 +122,7 @@
             box-shadow: 0 0 20px var(--color-primario);
         }
 
-        /* --- CAJA CONTENEDORA PARA EL ESLOGAN --- */
-        .caja-eslogan {
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 20px 30px;
-            border-radius: 12px;
-            border: 1px solid rgba(0, 229, 255, 0.25);
-            backdrop-filter: blur(5px);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .eslogan-cool {
-            font-size: 1.1rem !important;
-            font-style: italic;
-            color: #ffffff !important;
-            margin: 0 0 12px 0 !important;
-            letter-spacing: 1px !important;
-            text-transform: none !important;
-            line-height: 1.4;
-        }
-
-        .gracias-cool {
-            font-family: 'Impact', 'Arial Black', sans-serif;
-            font-size: 1.3rem;
-            color: var(--color-primario);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin: 0 !important;
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
-        }
-
-        /* --- TARJETAS --- */
+        /* --- SECCIÓN DE TARJETAS (FLOTA AL HACER SCROLL) --- */
         #servicios {
             position: relative;
             z-index: 5; 
@@ -172,7 +155,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px); /* Esmerilado translúcido moderno */
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
@@ -201,7 +184,6 @@
             margin: 0 0 25px 0;
         }
 
-        /* Enlaces de cotización por WhatsApp con diseño de botón */
         .btn-cotizar {
             display: block;
             text-align: center;
@@ -221,37 +203,41 @@
             border-color: var(--color-primario);
         }
 
-        /* --- BOTÓN DE WHATSAPP FLOTANTE IMPRESCINDIBLE --- */
+        /* --- WHATSAPP FLOTANTE GENERAL --- */
         .btn-whatsapp {
             position: fixed;
             bottom: 25px;
             right: 25px;
-            background-color: #25d366; /* Verde oficial de WhatsApp */
+            background-color: #25d366;
             color: #ffffff;
-            padding: 14px 25px;
+            padding: 15px 25px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             z-index: 10;
-            display: flex;
-            align-items: center;
-            gap: 10px;
             transition: transform 0.3s ease;
-        }
-
-        /* Ajustes para el icono SVG */
-        .btn-whatsapp svg {
-            width: 20px;
-            height: 20px;
-            fill: #ffffff;
         }
 
         .btn-whatsapp:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
         }
 
+        /* --- ANIMACIONES --- */
+        @keyframes aparecerNeon {
+            0% { opacity: 0; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes abrirChat {
+            0% { opacity: 0; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes aparecerSutil {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive para Celulares */
         @media (max-width: 768px) {
             .titulo-cool { font-size: 3.2rem; letter-spacing: 3px; }
             .contenido-hero p { font-size: 1.1rem; }
@@ -262,8 +248,9 @@
 
     <!-- Contenedor del video fijo al fondo -->
     <div class="hero-video-container">
-        <video autoplay loop muted playsinline preload="metadata" loading="lazy" class="video-fondo">
+        <video autoplay loop muted playsinline class="video-fondo">
             <source src="carw1.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
         </video>
         <div class="capa-oscura"></div>
     </div>
@@ -273,11 +260,7 @@
         <h1 class="titulo-cool">HG DETAILING</h1>
         <p>Cuidado premium y estética automotriz de nivel superior</p>
         <a href="#servicios" class="btn-scroll">Ver Servicios</a>
-        
-        <div class="caja-eslogan">
-            <p class="eslogan-cool">"Tener el vehículo sucio no es un descuido, sino una decisión"</p>
-            <h2 class="gracias-cool">¡Gracias por elegirnos!</h2>
-        </div>
+        <p class="eslogan-cool">"Tener el vehículo sucio no es un descuido, sino una decisión"</p>
     </header>
 
     <!-- Sección de Precios -->
@@ -285,32 +268,26 @@
         <section id="servicios">
             <h2>Nuestros Servicios y Precios</h2>
             <div id="contenedor-precios" class="grid-precios">
-                
                 <div class="tarjeta-servicio">
                     <h3>HG Fast (Carros Pequeños)</h3>
                     <p class="precio">$50.000</p>
                     <p class="descripcion">Lavado rápido y eficiente para autos compactos. Limpieza exterior profunda y aspirado básico.</p>
-                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
+                    <a href="https://wa.me" class="btn-cotizar" target="_blank">Cotizar Servicio</a>
                 </div>
 
                 <div class="tarjeta-servicio">
                     <h3>HG Fast (Carros Grandes)</h3>
                     <p class="precio">$70.000</p>
                     <p class="descripcion">Lavado rápido optimizado para camionetas y SUVs. Limpieza exterior premium y aspirado básico.</p>
-                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
+                    <a href="https://wa.me" class="btn-cotizar" target="_blank">Cotizar Servicio</a>
                 </div>
 
                 <div class="tarjeta-servicio">
                     <h3>HG Biker</h3>
                     <p class="precio">$25.000</p>
                     <p class="descripcion">Cuidado especializado para motocicletas. Lavado detallado y abrillantado general.</p>
-Usa el código con precaución.Cotizar ServicioElitePrecio VariableServicio premium personalizado de detallado profundo. El costo final se define bajo diagnóstico según el estado del vehículo.Cotizar ServicioAgenda por WhatsApp
-### 🏁 Pasos para verificar que todo esté OK:
-1. Haz clic abajo en el botón verde **Commit changes...** para guardar.
-2. Espera **1 minuto** a que el proceso en la pestaña *Actions* se ponga en verde.
-3. Abre una **pestaña de incógnito** nueva desde tu celular (con tus **datos móviles**) e ingresa a tu enlace oficial limpio y en minúsculas:
-   👉 **`https://github.io`**
+                    <a href="https://wa.me" class="btn-cotizar" target="_blank">Cotizar Servicio</a>
+                </div>
 
-¡Listo, mi hermano! El logo flotante ya aparecerá reluciente y, al tocarlo o presionar cualquier cotización, te enviará directamente a la app de WhatsApp con tu mensaje formateado. 
-
-Por favor, haz la prueba en tu celular y cuéntame si ya **te abre el chat de WhatsApp** de una.
+                <div class="tarjeta-servicio">
+                    <h3>Elite</h3>
