@@ -203,6 +203,7 @@
 
         .btn-cotizar {
             display: block;
+            width: 100%;
             text-align: center;
             background-color: transparent;
             color: #ffffff;
@@ -212,7 +213,8 @@
             text-decoration: none;
             font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s, border-color 0.3s;
+            transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+            box-sizing: border-box;
         }
 
         .tarjeta-servicio:hover .btn-cotizar {
@@ -223,9 +225,6 @@
 
         /* --- BOTÓN WHATSAPP --- */
         .btn-whatsapp {
-            href="https://wa.me/3209983134?text=hola,%20quiero%20cotizar%20un%20servicio%20de%20detailing."
-            target="_blanck">
-            </a>
             position: fixed;
             bottom: 25px;
             right: 25px;
@@ -236,9 +235,11 @@
             text-decoration: none;
             font-weight: bold;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            z-index: 10;
+            z-index: 9999;
             cursor: pointer;
             transition: transform 0.3s ease;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 16px;
         }
 
         .btn-whatsapp:hover {
@@ -253,6 +254,7 @@
 </head>
 <body>
 
+    <!-- VIDEO DE FONDO -->
     <div class="hero-video-container">
         <video autoplay loop muted playsinline class="video-fondo">
             <source src="carw1.mp4" type="video/mp4">
@@ -260,6 +262,7 @@
         <div class="capa-oscura"></div>
     </div>
 
+    <!-- PRESENTACIÓN -->
     <header class="contenido-hero">
         <h1 class="titulo-cool">HG DETAILING</h1>
         <p>Cuidado premium y estética automotriz de nivel superior</p>
@@ -271,39 +274,32 @@
         </div>
     </header>
 
+    <!-- LISTADO DE PRECIOS -->
     <main>
         <section id="servicios">
             <h2>Nuestros Servicios y Precios</h2>
             <div id="contenedor-precios" class="grid-precios">
+                
                 <div class="tarjeta-servicio">
                     <h3>HG Fast (Carros Pequeños)</h3>
                     <p class="precio">$50.000</p>
                     <p class="descripcion">Lavado rápido y eficiente para autos compactos. Limpieza exterior profunda y aspirado básico.</p>
-                    <button class="btn-cotizar" onclick="enviarMensaje('HG Fast Carros Pequeños')">Cotizar Servicio</button>
+                    <a href="https://wa.me." class="btn-cotizar" target="_blank">Cotizar Servicio</a>
                 </div>
 
                 <div class="tarjeta-servicio">
                     <h3>HG Fast (Carros Grandes)</h3>
                     <p class="precio">$70.000</p>
                     <p class="descripcion">Lavado rápido optimizado para camionetas y SUVs. Limpieza exterior premium y aspirado básico.</p>
-                    <button class="btn-cotizar" onclick="enviarMensaje('HG Fast Carros Grandes')">Cotizar Servicio</button>
+                    <a href="https://wa.me." class="btn-cotizar" target="_blank">Cotizar Servicio</a>
                 </div>
 
                 <div class="tarjeta-servicio">
                     <h3>HG Biker</h3>
                     <p class="precio">$25.000</p>
                     <p class="descripcion">Cuidado especializado para motocicletas. Lavado detallado y abrillantado general.</p>
-                    <button class="btn-cotizar" onclick="enviarMensaje('HG Biker')">Cotizar Servicio</button>
+                    <a href="https://wa.me." class="btn-cotizar" target="_blank">Cotizar Servicio</a>
                 </div>
 
                 <div class="tarjeta-servicio">
                     <h3>Elite</h3>
-                    <p class="precio">Precio Variable</p>
-                    <p class="descripcion">Servicio premium personalizado de detallado profundo. El costo final se define bajo diagnóstico según el estado del vehículo.</p>
-                    <button class="btn-cotizar" onclick="enviarMensaje('Elite')">Cotizar Servicio</button>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <button class="btn-whatsapp" onclick="enviarMensaje('Información General')">💬 Agenda por WhatsApp</button>
