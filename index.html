@@ -221,37 +221,39 @@
             border-color: var(--color-primario);
         }
 
-        /* --- BOTÓN WHATSAPP --- */
+    /* --- BOTÓN DE WHATSAPP FLOTANTE --- */
         .btn-whatsapp {
-            href="https://wa.me/3209983134?text=hola,%20quiero%20cotizar%20un%20servicio%20de%20detailing."
-            target="_blanck">
-            </a>
             position: fixed;
             bottom: 25px;
             right: 25px;
             background-color: #25d366;
             color: #ffffff;
-            padding: 15px 25px;
+            padding: 14px 25px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
             z-index: 10;
-            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
             transition: transform 0.3s ease;
+        }
+
+        .btn-whatsapp svg {
+            width: 20px;
+            height: 20px;
+            fill: #ffffff;
         }
 
         .btn-whatsapp:hover {
             transform: scale(1.05);
-        }
-
-        @media (max-width: 768px) {
-            .titulo-cool { font-size: 3.2rem; letter-spacing: 3px; }
-            .contenido-hero p { font-size: 1.1rem; }
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
         }
     </style>
 </head>
 <body>
+
 
     <div class="hero-video-container">
         <video autoplay loop muted playsinline class="video-fondo">
