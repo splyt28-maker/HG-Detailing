@@ -8,7 +8,7 @@
         /* --- VARIABLES DE DISEÑO --- */
         :root {
             --color-tarjeta: rgba(18, 18, 18, 0.85);
-            --color-primario: #00e5ff; /* Cyan neón oficial */
+            --color-primario: #00e5ff;
             --color-texto: #ffffff;
             --color-gris: #cccccc;
         }
@@ -187,17 +187,7 @@
             margin: 0 0 10px 0;
         }
 
-        /* Estilo para ajustar el texto largo del precio de Elite sin romper el diseño */
-        .precio-elite {
-            font-size: 1.4rem !important;
-            color: var(--color-primario);
-            font-weight: bold;
-            margin: 0 0 15px 0;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .precio-normal {
+        .precio {
             font-size: 2rem;
             color: var(--color-primario);
             font-weight: bold;
@@ -221,6 +211,7 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
+            cursor: pointer;
             transition: background-color 0.3s, border-color 0.3s;
         }
 
@@ -230,7 +221,7 @@
             border-color: var(--color-primario);
         }
 
-        /* --- BOTÓN DE WHATSAPP FLOTANTE --- */
+    /* --- BOTÓN DE WHATSAPP FLOTANTE --- */
         .btn-whatsapp {
             position: fixed;
             bottom: 25px;
@@ -264,7 +255,7 @@
 <body>
 
     <div class="hero-video-container">
-        <video autoplay loop muted playsinline preload="metadata" loading="lazy" class="video-fondo">
+        <video autoplay loop muted playsinline class="video-fondo">
             <source src="carw1.mp4" type="video/mp4">
         </video>
         <div class="capa-oscura"></div>
@@ -285,22 +276,35 @@
         <section id="servicios">
             <h2>Nuestros Servicios y Precios</h2>
             <div id="contenedor-precios" class="grid-precios">
-                
                 <div class="tarjeta-servicio">
                     <h3>HG Fast (Carros Pequeños)</h3>
-                    <p class="precio-normal">$50.000</p>
+                    <p class="precio">$50.000</p>
                     <p class="descripcion">Lavado rápido y eficiente para autos compactos. Limpieza exterior profunda y aspirado básico.</p>
-                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
+                    <button class="btn-cotizar" onclick="enviarMensaje('HG Fast Carros Pequeños')">Cotizar Servicio</button>
                 </div>
 
                 <div class="tarjeta-servicio">
                     <h3>HG Fast (Carros Grandes)</h3>
-                    <p class="precio-normal">$70.000</p>
+                    <p class="precio">$70.000</p>
                     <p class="descripcion">Lavado rápido optimizado para camionetas y SUVs. Limpieza exterior premium y aspirado básico.</p>
-                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
+                    <button class="btn-cotizar" onclick="enviarMensaje('HG Fast Carros Grandes')">Cotizar Servicio</button>
                 </div>
 
                 <div class="tarjeta-servicio">
                     <h3>HG Biker</h3>
-                    <p class="precio-normal">$25.000</p>
+                    <p class="precio">$25.000</p>
                     <p class="descripcion">Cuidado especializado para motocicletas. Lavado detallado y abrillantado general.</p>
+                    <button class="btn-cotizar" onclick="enviarMensaje('HG Biker')">Cotizar Servicio</button>
+                </div>
+
+                <div class="tarjeta-servicio">
+                    <h3>Elite</h3>
+                    <p class="precio">Precio Variable</p>
+                    <p class="descripcion">Servicio premium personalizado de detallado profundo. El costo final se define bajo diagnóstico según el estado del vehículo.</p>
+                    <button class="btn-cotizar" onclick="enviarMensaje('Elite')">Cotizar Servicio</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button class="btn-whatsapp" onclick="enviarMensaje('Información General')">💬 Agenda por WhatsApp</button>
