@@ -186,26 +186,36 @@ body {
     border-color: var(--color-primario);
 }
 
-/* --- BOTÓN WHATSAPP --- */
+/* --- WHATSAPP FLOTANTE MODERNIZADO --- */
 .btn-whatsapp {
     position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background-color: #25d366;
-    color: #ffffff;
-    padding: 15px 25px;
-    border-radius: 50px;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, var(--color-primario) 0%, #2575fc 100%);
+    color: white;
+    padding: 14px 22px;
+    border-radius: 28px;
     text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     z-index: 10;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
 }
-
-/* Efecto visual al pasar el cursor */
 .btn-whatsapp:hover {
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #2575fc 0%, #2557e0 100%);
+}
+.btn-whatsapp:active {
+    transform: translateY(0);
+}
+.btn-whatsapp i {
+    font-size: 1.4rem;
 }
 
 .btn-whatsapp:hover {
@@ -227,7 +237,44 @@ body {
 @media (max-width: 768px) {
     .titulo-cool { font-size: 3.2rem; letter-spacing: 3px; }
     .contenido-hero p { font-size: 1.1rem; }
-}/* --- ESTILO PARA EL ESLOGAN --- */
+    .btn-whatsapp {
+        bottom: 15px;
+        right: 15px;
+        padding: 12px 20px;
+        font-size: 1rem;
+        border-radius: 24px;
+        transform: scale(0.9);
+    }
+    .btn-whatsapp i {
+        font-size: 1.2rem;
+    }
+}
+
+/* Responsive para Tablets */
+@media (max-width: 1024px) {
+    .btn-whatsapp {
+        bottom: 18px;
+        right: 18px;
+        padding: 13px 21px;
+    }
+}
+
+/* Responsive para móviles muy pequeños */
+@media (max-width: 480px) {
+    .btn-whatsapp {
+        bottom: 12px;
+        right: 12px;
+        padding: 10px 16px;
+        font-size: 0.9rem;
+        border-radius: 22px;
+        transform: scale(0.85);
+    }
+    .btn-whatsapp i {
+        font-size: 1.1rem;
+    }
+}
+
+/* --- ESTILO PARA EL ESLOGAN --- */
 .eslogan-cool {
     font-size: 1.1rem !important;
     font-style: italic;
