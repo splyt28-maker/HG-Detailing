@@ -1,7 +1,7 @@
 /* --- VARIABLES DE DISEÑO --- */
 :root {
-    --color-tarjeta: rgba(18, 18, 18, 0.85);
-    --color-primario: #00e5ff;
+    --color-tarjeta: rgba(18, 18, 18, 0.85); /* Fondo oscuro con transparencia premium */
+    --color-primario: #00e5ff; /* Cyan neón brillante */
     --color-texto: #ffffff;
     --color-gris: #cccccc;
 }
@@ -15,7 +15,7 @@ body {
     background-color: #000000;
 }
 
-/* --- VIDEO FIJO AL FONDO --- */
+/* --- VIDEO COMPLETAMENTE FIJO AL FONDO DE TODA LA WEB --- */
 .hero-video-container {
     position: fixed;
     top: 0;
@@ -23,8 +23,7 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    z-index: -2;
-    background-color: #000000;
+    z-index: -2; /* Envía el video detrás de todo el contenido */
 }
 
 .video-fondo {
@@ -45,11 +44,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.9) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.9) 100%);
     z-index: -1;
 }
 
-/* --- PORTADA INICIAL --- */
+/* --- TEXTO DE BIENVENIDA (PANTALLA INICIAL) --- */
 .contenido-hero {
     height: 100vh;
     display: flex;
@@ -61,6 +60,7 @@ body {
     box-sizing: border-box;
 }
 
+/* Estilo Imponente y Deportivo */
 .titulo-cool {
     font-family: 'Impact', 'Arial Black', sans-serif;
     font-size: 5.5rem;
@@ -69,16 +69,21 @@ body {
     margin: 0 0 10px 0;
     letter-spacing: 6px;
     text-transform: uppercase;
-    text-shadow: 3px 3px 0px #000000, 0 0 10px var(--color-primario), 0 0 30px var(--color-primario);
+    text-shadow: 
+        3px 3px 0px #000000,
+        0 0 10px var(--color-primario),
+        0 0 30px var(--color-primario);
+    animation: aparecerNeon 1.5s ease-out forwards;
 }
 
 .contenido-hero p {
     font-size: 1.4rem;
-    color: #e0e0e0;
-    margin: 0 0 25px 0;
+    color: #02d8f5;
+    margin: 0 0 35px 0;
     letter-spacing: 2px;
     text-transform: uppercase;
-    text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.9);
+    text-shadow: 0px 2px 8px rgb(33, 236, 94);
+    animation: aparecerSutil 2s ease-out forwards;
 }
 
 .btn-scroll {
@@ -92,7 +97,6 @@ body {
     border-radius: 50px;
     transition: all 0.3s ease;
     background-color: rgba(0, 0, 0, 0.4);
-    margin-bottom: 30px;
 }
 
 .btn-scroll:hover {
@@ -101,38 +105,7 @@ body {
     box-shadow: 0 0 20px var(--color-primario);
 }
 
-/* --- CAJA CONTENEDORA PARA EL ESLOGAN --- */
-.caja-eslogan {
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 20px 30px;
-    border-radius: 12px;
-    border: 1px solid rgba(0, 229, 255, 0.25);
-    backdrop-filter: blur(5px);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.eslogan-cool {
-    font-size: 1.1rem !important;
-    font-style: italic;
-    color: #ffffff !important;
-    margin: 0 0 12px 0 !important;
-    letter-spacing: 1px !important;
-    text-transform: none !important;
-    line-height: 1.4;
-}
-
-.gracias-cool {
-    font-family: 'Impact', 'Arial Black', sans-serif;
-    font-size: 1.3rem;
-    color: var(--color-primario);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin: 0 !important;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
-}
-
-/* --- TARJETAS --- */
+/* --- SECCIÓN DE TARJETAS (FLOTA AL HACER SCROLL) --- */
 #servicios {
     position: relative;
     z-index: 5; 
@@ -165,7 +138,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px); /* Esmerilado translúcido moderno */
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
@@ -196,7 +169,6 @@ body {
 
 .btn-cotizar {
     display: block;
-    width: 100%;
     text-align: center;
     background-color: transparent;
     color: #ffffff;
@@ -205,9 +177,7 @@ body {
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-    box-sizing: border-box;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 .tarjeta-servicio:hover .btn-cotizar {
@@ -216,7 +186,7 @@ body {
     border-color: var(--color-primario);
 }
 
-/* --- BOTÓN WHATSAPP --- */
+/* --- ESTILOS DEL BOTÓN WHATSAPP --- */
 .btn-whatsapp {
     position: fixed;
     bottom: 25px;
@@ -225,22 +195,95 @@ body {
     color: #ffffff;
     padding: 15px 25px;
     border-radius: 50px;
-    border: none;
+    text-decoration: none;
     font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     z-index: 9999;
     cursor: pointer;
     transition: transform 0.3s ease;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 16px;
+}
+
+/* Efecto al pasar el mouse por encima */
+.btn-whatsapp:hover {
+    transform: scale(1.05);
+}
+.btn-whatsapp:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #2575fc 0%, #2557e0 100%);
+}
+.btn-whatsapp:active {
+    transform: translateY(0);
+}
+.btn-whatsapp i {
+    font-size: 1.4rem;
 }
 
 .btn-whatsapp:hover {
     transform: scale(1.05);
 }
 
-/* --- RESPONSIVE --- */
+/* --- ANIMACIONES --- */
+@keyframes identificar { 0% { filter: brightness(0.5); } 100% { filter: brightness(1); } }
+@keyframes aparecerNeon {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+@keyframes aparecerSutil {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive para Celulares */
 @media (max-width: 768px) {
     .titulo-cool { font-size: 3.2rem; letter-spacing: 3px; }
     .contenido-hero p { font-size: 1.1rem; }
+    .btn-whatsapp {
+        bottom: 15px;
+        right: 15px;
+        padding: 12px 20px;
+        font-size: 1rem;
+        border-radius: 24px;
+        transform: scale(0.9);
+    }
+    .btn-whatsapp i {
+        font-size: 1.2rem;
+    }
+}
+
+/* Responsive para Tablets */
+@media (max-width: 1024px) {
+    .btn-whatsapp {
+        bottom: 18px;
+        right: 18px;
+        padding: 13px 21px;
+    }
+}
+
+/* Responsive para móviles muy pequeños */
+@media (max-width: 480px) {
+    .btn-whatsapp {
+        bottom: 12px;
+        right: 12px;
+        padding: 10px 16px;
+        font-size: 0.9rem;
+        border-radius: 22px;
+        transform: scale(0.85);
+    }
+    .btn-whatsapp i {
+        font-size: 1.1rem;
+    }
+}
+
+/* --- ESTILO PARA EL ESLOGAN --- */
+.eslogan-cool {
+    font-size: 1.1rem !important;
+    font-style: italic;
+    color: #45b7e4 !important;
+    margin-top: 25px !important;
+    letter-spacing: 1px !important;
+    text-transform: none !important; /* Mantiene minúsculas para estilo de frase */
+    animation: aparecerSutil 2.5s ease-out forwards !important;
 }
