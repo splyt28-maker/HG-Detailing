@@ -187,16 +187,18 @@
             margin: 0 0 10px 0;
         }
 
-        .precio {
-            font-size: 2rem;
+        /* Estilo para ajustar el texto largo del precio de Elite sin romper el diseño */
+        .precio-elite {
+            font-size: 1.4rem !important;
             color: var(--color-primario);
             font-weight: bold;
             margin: 0 0 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        /* Ajuste específico para que el texto largo del precio de Elite quepa perfectamente sin desacomodar la tarjeta */
-        .precio-elite {
-            font-size: 1.4rem !important;
+        .precio-normal {
+            font-size: 2rem;
             color: var(--color-primario);
             font-weight: bold;
             margin: 0 0 15px 0;
@@ -284,24 +286,21 @@
             <h2>Nuestros Servicios y Precios</h2>
             <div id="contenedor-precios" class="grid-precios">
                 
-                <!-- Tarjeta 1 -->
                 <div class="tarjeta-servicio">
                     <h3>HG Fast (Carros Pequeños)</h3>
-                    <p class="precio">$50.000</p>
+                    <p class="precio-normal">$50.000</p>
                     <p class="descripcion">Lavado rápido y eficiente para autos compactos. Limpieza exterior profunda y aspirado básico.</p>
                     <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
                 </div>
 
-                <!-- Tarjeta 2 -->
                 <div class="tarjeta-servicio">
                     <h3>HG Fast (Carros Grandes)</h3>
-                    <p class="precio">$70.000</p>
+                    <p class="precio-normal">$70.000</p>
                     <p class="descripcion">Lavado rápido optimizado para camionetas y SUVs. Limpieza exterior premium y aspirado básico.</p>
                     <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
                 </div>
 
-                <!-- Tarjeta 3 -->
                 <div class="tarjeta-servicio">
                     <h3>HG Biker</h3>
-                    <p class="precio">$25.000</p>
+                    <p class="precio-normal">$25.000</p>
                     <p class="descripcion">Cuidado especializado para motocicletas. Lavado detallado y abrillantado general.</p>
