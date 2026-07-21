@@ -201,7 +201,6 @@
             margin: 0 0 25px 0;
         }
 
-        /* Enlaces nativos de llamada directos */
         .btn-cotizar {
             display: block;
             text-align: center;
@@ -221,18 +220,18 @@
             border-color: var(--color-primario);
         }
 
-        /* --- BOTÓN DE LLAMADA FLOTANTE INDESTRUCTIBLE --- */
-        .btn-llamar {
+        /* --- BOTÓN DE WHATSAPP FLOTANTE --- */
+        .btn-whatsapp {
             position: fixed;
             bottom: 25px;
             right: 25px;
-            background-color: #00e5ff;
-            color: #000000;
+            background-color: #25d366;
+            color: #ffffff;
             padding: 14px 25px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0, 229, 255, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
             z-index: 10;
             display: flex;
             align-items: center;
@@ -240,26 +239,20 @@
             transition: transform 0.3s ease;
         }
 
-        .btn-llamar svg {
-            width: 18px;
-            height: 18px;
-            fill: #000000;
+        .btn-whatsapp svg {
+            width: 20px;
+            height: 20px;
+            fill: #ffffff;
         }
 
-        .btn-llamar:hover {
+        .btn-whatsapp:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 20px #00e5ff;
-        }
-
-        @media (max-width: 768px) {
-            .titulo-cool { font-size: 3.2rem; letter-spacing: 3px; }
-            .contenido-hero p { font-size: 1.1rem; }
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
         }
     </style>
 </head>
 <body>
 
-    <!-- Contenedor del video fijo al fondo -->
     <div class="hero-video-container">
         <video autoplay loop muted playsinline preload="metadata" loading="lazy" class="video-fondo">
             <source src="carw1.mp4" type="video/mp4">
@@ -267,7 +260,6 @@
         <div class="capa-oscura"></div>
     </div>
 
-    <!-- Portada Inicial -->
     <header class="contenido-hero">
         <h1 class="titulo-cool">HG DETAILING</h1>
         <p>Cuidado premium y estética automotriz de nivel superior</p>
@@ -279,33 +271,36 @@
         </div>
     </header>
 
-    <!-- Sección de Precios -->
     <main>
         <section id="servicios">
             <h2>Nuestros Servicios y Precios</h2>
             <div id="contenedor-precios" class="grid-precios">
                 
+                <!-- Tarjeta 1 -->
                 <div class="tarjeta-servicio">
                     <h3>HG Fast (Carros Pequeños)</h3>
                     <p class="precio">$50.000</p>
                     <p class="descripcion">Lavado rápido y eficiente para autos compactos. Limpieza exterior profunda y aspirado básico.</p>
-                    <a class="btn-cotizar" href="tel:3209983234">Llamar para Cotizar</a>
+                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
                 </div>
 
+                <!-- Tarjeta 2 -->
                 <div class="tarjeta-servicio">
                     <h3>HG Fast (Carros Grandes)</h3>
                     <p class="precio">$70.000</p>
                     <p class="descripcion">Lavado rápido optimizado para camionetas y SUVs. Limpieza exterior premium y aspirado básico.</p>
-                    <a class="btn-cotizar" href="tel:3209983234">Llamar para Cotizar</a>
+                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
                 </div>
 
+                <!-- Tarjeta 3 -->
                 <div class="tarjeta-servicio">
                     <h3>HG Biker</h3>
                     <p class="precio">$25.000</p>
                     <p class="descripcion">Cuidado especializado para motocicletas. Lavado detallado y abrillantado general.</p>
-                    <a class="btn-cotizar" href="tel:3209983234">Llamar para Cotizar</a>
+                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
                 </div>
 
+                <!-- Tarjeta 4 (¡Restaurada e Impecable!) -->
                 <div class="tarjeta-servicio">
                     <h3>Elite</h3>
                     <p class="precio">Precio Variable</p>
