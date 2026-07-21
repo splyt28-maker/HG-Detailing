@@ -8,7 +8,7 @@
         /* --- VARIABLES DE DISEÑO --- */
         :root {
             --color-tarjeta: rgba(18, 18, 18, 0.85);
-            --color-primario: #00e5ff;
+            --color-primario: #00e5ff; /* Cyan neón de tu marca */
             --color-texto: #ffffff;
             --color-gris: #cccccc;
         }
@@ -201,7 +201,7 @@
             margin: 0 0 25px 0;
         }
 
-        /* Enlaces nativos limpios para máxima compatibilidad */
+        /* Enlaces nativos de llamada 'tel:' blindados de errores */
         .btn-cotizar {
             display: block;
             text-align: center;
@@ -221,18 +221,18 @@
             border-color: var(--color-primario);
         }
 
-        /* --- BOTÓN WHATSAPP FLOTANTE --- */
-        .btn-whatsapp {
+        /* --- BOTÓN DE LLAMADA FLOTANTE --- */
+        .btn-llamar {
             position: fixed;
             bottom: 25px;
             right: 25px;
-            background-color: #25d366;
-            color: #ffffff;
-            padding: 12px 25px;
+            background-color: #00e5ff; /* Color cyan neón dinámico */
+            color: #000000;
+            padding: 14px 25px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 15px rgba(0, 229, 255, 0.4);
             z-index: 10;
             display: flex;
             align-items: center;
@@ -240,14 +240,15 @@
             transition: transform 0.3s ease;
         }
 
-        .btn-whatsapp svg {
-            width: 22px;
-            height: 22px;
-            fill: #ffffff;
+        .btn-llamar svg {
+            width: 18px;
+            height: 18px;
+            fill: #000000;
         }
 
-        .btn-whatsapp:hover {
+        .btn-llamar:hover {
             transform: scale(1.05);
+            box-shadow: 0 0 20px #00e5ff;
         }
 
         @media (max-width: 768px) {
@@ -280,28 +281,29 @@
         <section id="servicios">
             <h2>Nuestros Servicios y Precios</h2>
             <div id="contenedor-precios" class="grid-precios">
-                <!-- Enlaces web purificados con textos cortos codificados al 100% -->
+                
                 <div class="tarjeta-servicio">
                     <h3>HG Fast (Carros Pequeños)</h3>
                     <p class="precio">$50.000</p>
                     <p class="descripcion">Lavado rápido y eficiente para autos compactos. Limpieza exterior profunda y aspirado básico.</p>
-                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
+                    <a class="btn-cotizar" href="tel:3209983234">Llamar para Cotizar</a>
                 </div>
 
                 <div class="tarjeta-servicio">
                     <h3>HG Fast (Carros Grandes)</h3>
                     <p class="precio">$70.000</p>
                     <p class="descripcion">Lavado rápido optimizado para camionetas y SUVs. Limpieza exterior premium y aspirado básico.</p>
-                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
+                    <a class="btn-cotizar" href="tel:3209983234">Llamar para Cotizar</a>
                 </div>
 
                 <div class="tarjeta-servicio">
                     <h3>HG Biker</h3>
                     <p class="precio">$25.000</p>
                     <p class="descripcion">Cuidado especializado para motocicletas. Lavado detallado y abrillantado general.</p>
-                    <a class="btn-cotizar" href="https://wa.me" target="_blank">Cotizar Servicio</a>
+                    <a class="btn-cotizar" href="tel:3209983234">Llamar para Cotizar</a>
                 </div>
 
                 <div class="tarjeta-servicio">
                     <h3>Elite</h3>
                     <p class="precio">Precio Variable</p>
+                    <p class="descripcion">Servicio premium personalizado de detallado profundo. El costo final se define bajo diagnóstico según el estado del vehículo.</p>
