@@ -186,7 +186,7 @@ body {
     border-color: var(--color-primario);
 }
 
-/* --- WHATSAPP FLOTANTE GENERAL --- */
+/* --- BOTÓN WHATSAPP --- */
 .btn-whatsapp {
     position: fixed;
     bottom: 25px;
@@ -199,7 +199,13 @@ body {
     font-weight: bold;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     z-index: 10;
+    cursor: pointer;
     transition: transform 0.3s ease;
+}
+
+/* Efecto visual al pasar el cursor */
+.btn-whatsapp:hover {
+    transform: scale(1.05);
 }
 
 .btn-whatsapp:hover {
